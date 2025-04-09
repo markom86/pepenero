@@ -386,7 +386,7 @@ body {
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .controls {
     position: absolute;
-    bottom: 500px;
+    bottom: 450px;
     left: 49%;
     transform: translateX(-50%);
     display: flex;
