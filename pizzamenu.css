@@ -1,0 +1,292 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-image: url('back5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px; /* Optional padding for better spacing */
+}
+
+.header-text {
+  color: white;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .header-text {
+  margin-left: -10px;
+  margin-top: 30px;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.header-left {
+  flex-basis: auto; /* Automatically takes the space needed */
+}
+
+.header-center {
+  flex-grow: 1; /* Takes the remaining space to center the content */
+  text-align: center; /* Centers the text horizontally */
+}
+
+.header-right {
+  flex-basis: auto; /* Automatically takes the space needed */
+}
+
+/* Optional: For better mobile responsiveness */
+@media (max-width: 600px) {
+  .header {
+      flex-direction: column; /* Stacks elements vertically on smaller screens */
+      align-items: center; /* Centers elements vertically */
+  }
+  
+  .header-left, .header-center, .header-right {
+      margin-bottom: 10px; /* Adds spacing between elements on smaller screens */
+      margin-top: -20px;
+
+  }
+}
+
+.current-menu {
+  font-size: 45px;
+  letter-spacing: 5px;
+  font-weight: 300;
+  margin-top: 20px;
+  color: white;
+}
+
+/* Dropdown Menu */
+
+.dropbtn {
+  padding: 5px 5px 5px 5px ;
+  width: 200px;
+  font-size: 18px;
+  margin-left: -16px;
+  }
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .dropbtn {
+    width: 150px;
+    font-size: 20px;
+    padding-top: -10px;
+    margin-left: 80px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    letter-spacing: 2px;
+    
+  }
+  .dropdown {
+    width: 150px;
+    height: 60px;
+
+  }
+
+  .header-center {
+    margin-bottom: -50px;
+    
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  margin-left: 17px;
+  margin-top: 50px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+  min-width: 160px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  margin-left: -12px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.4s;
+}
+
+.dropdown-content a:hover {
+  background: gray;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 4rem 1rem 1rem;
+  perspective: 1000px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 500;
+
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .image-grid {
+    margin-top: 50px;
+  }
+}
+
+/* ovde za hover to show text */
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+  background: white;
+  padding: 10px 10px 10px 10px;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.image-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ovde se zavrsava */
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+   
+  .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 6rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 5rem;
+  }
+
+  /* famozno dugme */
+  .dropbtn {
+    width: 238px;
+    font-size: 20px;
+    margin-top: -50px;
+    margin-left: -16px;
+    color: white;
+    border: none;
+    position: static;
+    letter-spacing: 2px;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+  }
+
+    .dropdown {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 8px;
+    z-index: 1000;
+    margin-left: 17px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    backdrop-filter: blur(9px);
+    min-width: 160px;
+    z-index: 1000;
+    font-size: 14px;
+    transition: 0.5s;
+  }
+
+  .header-text {
+    margin-top: 10px;
+    margin-left: 31px;
+    width: 300px;
+  }
+  .current-menu {
+    margin-top: 2px;
+    margin-left: 142px;
+    padding-right: 260px;
+
+  }
+}
+

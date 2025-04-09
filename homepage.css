@@ -1,0 +1,763 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-image: url('back3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  height: 1300px;
+  width: 98vw;
+  font-family: Poppins;
+  color: white;
+  margin: 0;
+  font-size: 12px;
+}
+
+#scrollButton {
+  position: fixed;
+      bottom: 500px;
+      right: 20px;
+      opacity: 0; /* Initially hidden */
+      pointer-events: none; /* Prevent interaction when hidden */
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgb(230, 222, 222);
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.5s ease, pointer-events 0.3s; /* Smooth transition for opacity */
+      z-index: 1;
+      
+}
+
+#scrollButton:hover {
+  opacity: 0.5;
+}
+
+#scrollButton.show {
+  opacity: 1; /* Fully visible */
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
+/* navigation bar start*/
+
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#navigation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+#pepenero {
+  font-size: 1.7rem; /* Increased size */
+  font-weight: 500;
+  color: #2c3e50;
+  letter-spacing: 3px;
+  margin-left: -350px; /* Strong left alignment */
+  margin-right: auto; /* Pushes links to right */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.navigation-container ul {
+  border: 1px solid black;
+  
+}
+
+.nav-item {
+  display: inline-block;
+  margin-left: 2rem;
+  position: relative;
+  right: -180px;
+}
+
+
+.nav-item a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(20, 36, 51);
+  transition: width 0.2s ease;
+}
+
+.nav-item a:hover {
+  color: rgb(20, 36, 51);
+  
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
+
+.nav-item a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-item a:hover::before {
+  transform: scaleX(1);
+}
+
+/* dropdown za language*/
+
+.dropbtn {
+  font-family: Poppins;
+  padding: 5px 5px 5px 5px ;
+  width: 200px;
+  font-size: 18px;
+  margin-top: -200px;
+  color: #2c3e50;
+  font-size: 20px;
+  letter-spacing: 3px;
+  padding-bottom: 45px;
+  }
+
+  .dropdown {
+    font-family: Poppins;
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1000;
+    margin-left: 1710px;
+    margin-top: -37px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    backdrop-filter: blur(6px);
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    margin-left: -12px;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.4s;
+  }
+
+  .dropdown-content a:hover {
+    background: gray;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+  .navigation-bar {
+      background: rgba(255, 255, 255, 0.98);
+  }
+  
+  #navigation-container {
+      padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  #pepenero {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+  }
+  
+  .nav-item {
+      display: block;
+      margin-left: -70px;
+      margin-bottom: 0.7rem;
+      right: 0px;
+
+  }
+  
+  .nav-item a {
+      font-size: 1.3rem;
+  }
+}
+
+
+/* navigation bar end */
+
+/* ovde pocinje slide menu css */
+.slideshow-container {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 198px;
+  margin-top: -50px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+
+   .dropdown {
+    font-family: Poppins;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    padding: 0rem;
+    border-radius: 8px;
+    z-index: 1000;
+    margin-left: 330px;
+    margin-top: 165px; 
+  }
+
+  .dropbtn {
+    font-size: 1.3rem;
+    width: 80px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+  }
+
+  .slideshow-container {
+  margin-top: -170px;
+  margin-left: 5px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  }
+}
+
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+    
+  #pepenero {
+    left: 350px;
+    font-size: 18px;
+  }
+
+  .nav-item a {
+    font-size: 18px;
+    right: 250px;
+  }
+
+  .dropbtn {
+  font-family: Poppins;
+  padding: 5px 5px 5px 5px ;
+  width: 80px;
+  font-size: 18px;
+  margin-top: 2px;
+  color: #2c3e50;
+  font-size: 18px;
+  letter-spacing: 3px;
+  padding-bottom: 32px;
+  }
+
+  .dropdown {
+    font-family: Poppins;
+    position: absolute;
+    top: 4rem;
+    left: 60px;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1000;
+    margin-left: 750px;
+    margin-top: -59px;
+  }
+
+
+  .slideshow-container {
+      top: 30px;
+      right: 100px;
+    }
+
+    .prev-btn {
+    position: absolute;
+    left: -420px;
+    top: -120px;   
+    padding: 20px 20px 20px 20px ;   
+   }
+    
+   .next-btn {
+    position: absolute;
+    left: 380px;
+    top: -120px;
+    padding: 20px 20px 20px 20px ;   
+   }
+
+   #locationclick {
+    margin-bottom: 70px;
+   }
+  }
+
+
+
+.slide {
+  position: absolute;
+  width: 80%;
+  height: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.slide.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide.exit {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Simplified control buttons */
+.controls {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 100px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .controls {
+    position: absolute;
+    bottom: 450px;
+    left: 49%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 70px;  }
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+
+/* ovde se zavrsava*/
+
+.wrapper {
+  text-align: center;
+}
+
+#menuclick {
+  margin-top: -10px;
+  padding-bottom: 30px;
+}
+
+.topic {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  font-family: Poppins;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+}
+
+.menubox {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .menubox {
+    display: flex;
+    gap: 8px; /* Increase gap for better spacing */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px; /* Add padding for better alignment */
+    align-items: center; /* Ensure vertical alignment */
+  }
+
+  .menubox div {
+    width: 100%; /* Make items stack vertically on smaller screens */
+    text-align: center; /* Center text inside each item */
+  }
+
+  #menuclick {
+    margin-top: -300px;
+  }
+}
+
+.name {
+  font-size: 18px;
+  color: rgb(27, 27, 27);
+  margin-top: 30px;
+  height: 300px;
+  margin-top: -180px;
+  padding-top: 200px;
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+
+.name {
+  font-size: 30px;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+      transform: translateX(-300px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.menu:nth-child(1) {
+  animation-delay: 0s;
+}
+.menu:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.menu:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.menu:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.menu:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.menu:nth-child(6) {
+  animation-delay: 1s;
+}
+.menu:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.menu:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+
+.menu {
+ width: 200px;
+ height: 250px;
+ background-color: #ffffff;
+ border-radius: 10px;
+ text-align: center;
+ opacity: 0;
+ transform: translateX(-300px);
+ animation: flyIn 1s forwards;
+ cursor: pointer;
+  
+}
+
+.menu:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.menubox img {
+  width: 100%;
+            height: 60%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+}
+
+.about {
+  margin-top: 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 25px;
+  padding-right: 110px;
+  padding-left: 110px;
+  text-align: justify;
+  font-size: 20px;
+
+  font-family: Poppins;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+/* ovde je za toggle button za text*/
+
+#toggleButton{
+font-family: Poppins;
+font-size: 16px;
+
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .about {
+    
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: justify;
+    font-size: 20px;
+    font-family: Poppins;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+.mapbox {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+
+}
+
+
+footer {
+  background-color: #333;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Flex container to center the divs */
+.container {
+  display: flex;
+  justify-content: center; /* Distribute divs evenly */
+  gap: 100px;
+
+}
+
+.container .box {
+  font-size: 20px;
+  justify-content: center;
+  vertical-align: center;
+}
+
+/* Style each individual div */
+.box {
+  width: 200px;
+  height: 275px;
+  background-color: rgb(230, 214, 172);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 0px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(107, 105, 105);
+  font-weight: bold;
+}
+
+i.fas.fa-map-marker-alt {
+  font-size: 48px;
+  color: #FF5733;
+}
+
+i.fas.fa-map-marker-alt:hover {
+  color: #e69583;
+
+}
+
+.email-icon {
+  font-size: 48px;
+  color: #007BFF; /* You can customize the color */
+  text-decoration: none; /* Removes the underline */
+  transition: color 0.3s ease;
+}
+
+.email-icon:hover {
+  color: #71a9e4; /* Change color on hover */
+}
+
+
+.phone-icon {
+  font-size: 48px;
+  color: #28a745; /* Customize the color */
+  text-decoration: none; /* Removes the underline */
+  transition: color 0.3s ease;
+}
+
+.phone-icon:hover {
+  color: #69df82; /* Change color on hover */
+}
+
+/* za location and contact css*/
+
+.LAC{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .menubox {
+    display: flex;
+    gap: 8px; /* Increase gap for better spacing */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px; /* Add padding for better alignment */
+    align-items: center; /* Ensure vertical alignment */
+  }
+
+  .menubox div {
+    width: 100%; /* Make items stack vertically on smaller screens */
+    text-align: center; /* Center text inside each item */
+  }
+  
+}
+
+
+
+.menuu{
+  width: 200px;
+  height: 150px;
+  gap: 45px; 
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: flyIn 1s forwards;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+
+ }
+
+.namee{
+  width: 200px;
+  height: 100px;
+  gap: 45px; 
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: flyIn 1s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  font-size: 20px;
+  margin-top: -40px;
+}
+
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+
+  .namee {
+    display: flex; /* Ensure the element is visible */
+    opacity: 1;    /* Make content visible */
+    transform: translateX(0); /* Reset position */
+    animation: none; /* Disable animation if necessary */
+  }
+
+  .mobileHide {
+    display: block; /* Ensure visibility of elements with 'mobileHide' class */
+  }
+}
+
+/*
+.mobileHide {
+  display: inline; 
+} */
+
+
+@media only screen and (max-width: 768px) {
+  .mobileHide {
+    display: none; /* Hide text on screens smaller than 768px */
+  }
+
+}
+
+.details p {
+  color: white;
+  font-size: 18px;
+  margin-left: 100px;
+  padding-bottom: 50px;
+
+}
+
+.privatnost a{
+
+    color: white;
+    text-decoration: none;
+    padding-bottom: 100px;
+    margin-left: 100px;
+    font-size: 20px;
+    text-transform: none;
+
+}

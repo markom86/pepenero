@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza menu</title>
+  <link rel="stylesheet" href="pizzamenu.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html">
+                <h1 class="header-text">Home</h1></a>
+        </div>
+                <div class="header-right"></div> <!-- Empty div to balance the layout -->
+    </header>
+
+<div class="dropdown">
+  <button class="dropbtn">Quick Menu Access</button>
+  <div class="dropdown-content">
+      <a href="pastamenu.html">PASTA</a>
+      <a href="seafoodmenu.html">SEA FOOD</a>
+      <a href="burger.html">BURGER</a>
+      <a href="dessert.html">DESSERT</a>
+      <a href="bbq.html">BBQ</a>
+      <a href="pancake.html">PANCAKE</a>
+      <a href="salad.html">SALAD</a>
+  </div>
+</div>
+
+<div class="image-grid">
+  <div class="image-card">
+      <img src="Pepenero.jpg" alt="Image 1">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="calzone.jpg" alt="Image 2">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="peperoni.jpg" alt="Image 3">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="Pizza net.jpg" alt="Image 4">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="quatro.jpg" alt="Image 5">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="pizza net1.jpg" alt="Image 6">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="Mediteran.jpg" alt="Image 7">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+  <div class="image-card">
+      <img src="pizza.JPG" alt="Image 8">
+      <div class="hover-overlay">
+        <div class="overlay-content">
+            <h3>Image Title</h3>
+            <p>Hover description text</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Image Animation
+  document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.image-card');
+      let index = 0;
+
+      function animateImages() {
+          if(index >= images.length) return;
+          images[index].style.opacity = 1;
+          images[index].style.transform = 'translateY(0)';
+          index++;
+          setTimeout(animateImages, 100);
+      }
+
+      animateImages();
+  });
+</script>
+  
+  
+</body>
+</html>

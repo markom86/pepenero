@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagina iniziale</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+  <button id="scrollButton" onclick="scrollToTop()">Torna all'inizio</button>
+
+
+  <div class="navigation-bar">
+    <div id="navigation-container">
+      <div id="pepenero">PepeNero - Restaurant <br> Pula Croatia</a>
+   <!--   <a href="tel:+38552350866">Pepenero - Restaurant +385 52 350 866</a> --></div>
+           <ul>
+            <li class="nav-item"><a href="#menuclick">Menu</a></li>
+            <li class="nav-item"><a href="#aboutclick">Chi siamo
+            </a></li>
+            <li class="nav-item"><a href="#locationclick">Posizione e contatto
+            </a></li>
+        </ul>
+        <div class="dropdown">
+          <button class="dropbtn">IT</button>
+          <div class="dropdown-content">
+            <a href="hr-homepage.html">HR - Hrvatski</a>
+            <a href="homepage.html">EN - English</a>
+            <a href="fr-homepage.html">FR - French</a>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+
+ <div class="slideshow-container">
+        <div class="slide" id="slide1"> 
+          <img src="pepe.JPG" alt="Image 1">
+        </div>
+        <div class="slide" id="slide2"> 
+          <img src="pepe1.JPG" alt="Image 2">
+        </div>
+        <div class="slide" id="slide3"> 
+          <img src="pepe2.JPG" alt="Image 3">
+        </div>
+      </div>
+      
+      <!-- Simplified controls -->
+      <div class="controls">
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+      </div>
+
+<div class="topic" id="menuclick">MENU</div>
+<div class="menubox">
+  <a href="pizzamenu.html"></a>
+
+      <div class="menu" onclick="window.location.href='pizzamenu-it.html';"><img src="Pizza net.jpg"  alt=""><div class="name">PIZZA</div></div>
+
+      <div class="menu" onclick="window.location.href='pastamenu.html';"><img src="pasta net.jpg" alt=""><div class="name">PASTA</div></div>
+
+      <div class="menu" onclick="window.location.href='seafoodmenu.html';"><img src="sea.JPG" alt=""><div class="name">SEAFOOD</div></div>
+
+      <div class="menu" onclick="window.location.href='burger.html';"><img src="burger.JPG" alt=""><div class="name">BURGER</div></div> <br>
+
+      <div class="menu" onclick="window.location.href='dessert.html';"><img src="dessert.JPG" alt=""><div class="name">DESSERT</div></div>
+
+      <div class="menu" onclick="window.location.href='bbq.html';"><img src="food3.JPG" alt=""><div class="name">BBQ</div></div>
+
+      <div class="menu" onclick="window.location.href='pancake.html';"><img src="pancake.JPG" alt=""><div class="name">PANCAKE</div></div>
+
+      <div class="menu" onclick="window.location.href='salad.html';"><img src="salad.JPG" alt=""><div class="name">SALAD</div></div>
+
+
+</div>
+
+<div class="topic" id="aboutclick">Chi siamo</div>
+<div class="text">
+    <p class="about" id="aboutText">PepeNero, incastonato nel cuore del centro storico della città, è un gioiello nascosto che fonde perfettamente il fascino dell'architettura storica con l'arte culinaria moderna. Situato lungo le strade acciottolate, il ristorante è ospitato in un edificio splendidamente restaurato, dove il fascino rustico dei mattoni a vista e degli arredi d'epoca incontra un design elegante e contemporaneo. All'interno, l'atmosfera è calda e invitante, con luci soffuse che illuminano i tavoli in legno e un arredamento elegante che trasuda una raffinatezza senza tempo.<button id="toggleButton" onclick="toggleText()">Mostra altro
+    </button>
+      <span id="hiddenText" style="display:none;">
+<br>
+Il menù di PepeNero è un viaggio culinario che unisce ingredienti di provenienza locale e un tocco creativo. Le sue offerte sono una fusione di sapori europei tradizionali e moderni, con piatti che onorano la ricca storia della regione, introducendo al contempo emozionanti colpi di scena contemporanei. Dalle sostanziose paste alle carni sapientemente lavorate, ogni piatto di Pepenero è una testimonianza di qualità e artigianalità. La lista dei vini è altrettanto impressionante, con una selezione di etichette sia locali che internazionali, perfette da abbinare al tuo pasto.
+<br><br>
+
+L'atmosfera accogliente di PepeNero lo rende ideale per ogni occasione, che tu voglia goderti una cena intima, festeggiare un evento speciale o semplicemente fermarti per un delizioso pranzo dopo una giornata trascorsa a esplorare la città vecchia. Il servizio attento assicura che ogni ospite si senta parte della famiglia PepeNero, aggiungendo alla reputazione del ristorante per calore e ospitalità. Con la sua combinazione di cucina deliziosa, splendida cornice e atmosfera invitante, PepeNero è una tappa obbligata per chiunque voglia sperimentare il cuore e l'anima della vivace scena culinaria della città.</span></p>
+</div>
+<!-- 
+
+<div class="topic" id="locationclick">LOCATION</div>
+<div class="mapbox">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.186793942386!2d13.845257799999997!3d44.86812260000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477cd31e4b59046b%3A0xc4910ee2f30afe8a!2zQ2xlcmlzc2VhdW92YSB1bC4gMywgNTIxMDAsIFB1bGEsINCl0YDQstCw0YLRgdC60LA!5e1!3m2!1ssr!2srs!4v1739169051611!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+</div>
+-->
+<div class="topic" id="locationclick">POSIZIONE E CONTATTI
+</div>
+
+
+<div class="LAC">
+
+      <div class="menuu">
+        <a href="https://www.google.com/maps/place/Clerisseauova+ul.+3,+52100,+Pula,+%D0%A5%D1%80%D0%B2%D0%B0%D1%82%D1%81%D0%BA%D0%B0/@44.868123,13.845258,1552m/data=!3m1!1e3!4m6!3m5!1s0x477cd31e4b59046b:0xc4910ee2f30afe8a!8m2!3d44.8681226!4d13.8452578!16s%2Fg%2F11c1_1gjjh?hl=sr&entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a></div>
+
+      <!-- 
+      <div class="menuu"><a href="mailto:someone@example.com" class="email-icon">
+        <i class="fas fa-envelope"></i></a></div>
+-->
+
+      <div class="menuu"><a href="tel:+385 52 350 866" class="phone-icon">
+        <i class="fas fa-phone-alt"></i></a></div>
+ 
+      </div>
+
+      <div class="LAC">
+        <div class="namee">
+          <div class="mobileHide">Clerisseauova strada 3, 52100, Pula, Croata</div></div>
+      <!-- 
+
+          <div class="namee">
+            <div class="mobileHide">Email</div></div>
+-->
+
+            <div class="namee">
+              <div class="mobileHide">Clicca per chiamare
+              </div></div>
+      </div> 
+
+      <div class="details">
+
+        <p>
+          Ime firme d.o.o <br>
+          Sjedište: ulica, grad <br>
+          OIB: broj <br>
+          Trgovački sud u grad, MBS: broj <br>
+          Temeljni kapital XXXXXX kn plaćen u cjelosti <br>
+          Tvrtku zastupa: ime zastupnika
+        </p>
+      </div>
+
+      <div class="moreinfo">
+        <li class="privatnost"><a href="Privatnostiuvjeti.html">Privatnost i uvjeti</a></li>
+    </div>
+
+</body>
+<script src="it-homepage.js"></script>
+</html>
+
+
